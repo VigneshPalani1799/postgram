@@ -11,9 +11,16 @@ function App() {
           alt="logo"
         />
       </div>
-      <Post />
-      {/* Posts */}
-      {/* posts */}
+      <Post
+        userName="Vignesh_Palani"
+        imageUrl="https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png"
+        caption="Day 1 learning with react"
+      />
+      <Post
+        userName="Lekhi_Shetty"
+        imageUrl="https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png"
+        caption="Day 1 learning with react"
+      />
     </div>
   );
 }
