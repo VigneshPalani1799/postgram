@@ -1,7 +1,23 @@
+import React, { useState } from "react";
 import "./App.css";
 import Post from "./Post";
 
 function App() {
+  const [posts, setPosts] = useState([
+    {
+      userName: "Vignesh_BG",
+      caption: "Day 1 learning react",
+      imageUrl:
+        "https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png",
+    },
+    {
+      userName: "Lekhi_Shetty",
+      imageUrl:
+        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
+      caption: "My Cutie Pie",
+    },
+  ]);
+
   return (
     <div className="App">
       <div className="app_header">
@@ -11,16 +27,16 @@ function App() {
           alt="logo"
         />
       </div>
-      <Post
-        userName="Vignesh_Palani"
-        imageUrl="https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png"
-        caption="Day 1 learning with react"
-      />
-      <Post
-        userName="Lekhi_Shetty"
-        imageUrl="https://cdn.iconscout.com/icon/free/png-512/react-1-282599.png"
-        caption="Day 1 learning with react"
-      />
+
+      {posts.map((post) => {
+        return (
+          <Post
+            userName={post.userName}
+            caption={post.caption}
+            imageUrl={post.imageUrl}
+          />
+        );
+      })}
     </div>
   );
 }
